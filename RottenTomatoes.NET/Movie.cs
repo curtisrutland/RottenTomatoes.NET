@@ -99,7 +99,7 @@ namespace RottenTomatoes.NET {
         #endregion
 
         #region Static Methods
-        internal static Movie GetById(int id) {
+        internal static Movie GetMovie(int id) {
             string json = new WebClient().DownloadString(string.Format(Constants.MovieEndpoint, Constants.ApiKey, id));
             return Movie.Parse(json);
         }
@@ -131,7 +131,7 @@ namespace RottenTomatoes.NET {
 
         #region Public Methods
         public void LoadUnabridged() {
-            var unabridged = Movie.GetById(Id);
+            var unabridged = Movie.GetMovie(Id);
             IsAbridged = false;
             AbridgedDirectors = unabridged.AbridgedDirectors;
             Genres = unabridged.Genres;

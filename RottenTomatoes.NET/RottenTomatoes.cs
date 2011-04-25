@@ -5,11 +5,11 @@ using System.Text;
 
 namespace RottenTomatoes.NET {
     public static class RottenTomatoes {
-        public static Movie GetById(int id) {
+        public static Movie GetMovie(int id) {
             return Movie.GetById(id);
         }
 
-        public static MovieSearchResult Search(string query, int pageSize) {
+        public static MovieSearchResult FindMovies(string query, int pageSize) {
             return MovieSearchResult.Search(query, pageSize);
         }
     }

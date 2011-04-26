@@ -9,7 +9,7 @@ namespace RottenTomatoes.NET.Tester {
         static void Main(string[] args) {
             Console.WriteLine("Searching.");
             var res = RottenTomatoes.FindMovies("cell", 10);
-            var mov = res.Movies.First();
+            var mov = res.First();
             mov.LoadUnabridged();
             mov.LoadTopCriticReviews();
             mov.LoadDvdReviews();

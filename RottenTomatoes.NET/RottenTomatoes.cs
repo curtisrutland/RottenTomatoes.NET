@@ -10,7 +10,7 @@ namespace RottenTomatoes.NET {
         }
 
         public static MovieSearchResult FindMovies(string query, int pageSize) {
-            return MovieSearchResult.Search(query, pageSize);
+            return MovieSearchResult.FindMovies(query, pageSize);
         }
     }
 }

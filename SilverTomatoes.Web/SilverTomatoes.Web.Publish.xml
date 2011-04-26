@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://184.168.87.232:21" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FTP" replaceMatchingFiles="True" userName="curtisrutland" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAmD6adcNI1kGc00YtBTIwIwAAAAACAAAAAAAQZgAAAAEAACAAAACl/1RhRs/411nQmYTpigXlV/JscH7frZfaTNzAQDiXwgAAAAAOgAAAAAIAACAAAABYkrvZg1zfKX47ro94YcXS4527alh8XKve2Ts+0IV1LCAAAADFH5y+4fh2DXBnUbadltt4XdyagHQuw0BF3wbFomaM3EAAAAANGpzboZQ5FrQNJmgfHnEjRvcFaRt9tkAEHH+161xAzeO6zzeaksI6o03xglht9WvTCXCag0SoQBIiy0tTGSla" SelectedForPublish="True">
+    <file relUrl="SilverTomatoesTestPage.aspx" publishTime="04/25/2011 22:30:50" />
+    <file relUrl="ClientBin/SilverTomatoes.xap" publishTime="04/25/2011 22:50:27" />
+    <file relUrl="Web.config" publishTime="04/25/2011 23:13:59" />
+    <file relUrl="SilverTomatoesTestPage.html" publishTime="04/25/2011 22:30:50" />
+    <file relUrl="Silverlight.js" publishTime="04/25/2011 22:30:50" />
+    <file relUrl="bin/SilverTomatoes.Web.pdb" publishTime="04/25/2011 22:48:12" />
+    <file relUrl="bin/SilverTomatoes.Web.dll" publishTime="04/25/2011 22:48:12" />
+  </publishProfile>
+</publishData>

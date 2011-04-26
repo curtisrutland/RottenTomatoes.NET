@@ -9,7 +9,7 @@ using System.Web;
 
 namespace RottenTomatoes.NET {
     [DataContract]
-    public class MovieSearchResult {
+    public class MovieSearchResult : IEnumerable<Movie> {
         public event EventHandler<EventArgs> GetNextPageCompleted;
         protected virtual void OnGetNextPageCompleted() {
             if (GetNextPageCompleted != null)
@@ -23,7 +23,7 @@ namespace RottenTomatoes.NET {
         [DataMember]
         public int PageSize { get; set; }
         [DataMember]
-        public List<Movie> Movies { get; set; }
+        private List<Movie> Movies { get; set; }
         [DataMember]
         public SearchLinks SearchLinks { get; set; }
 
@@ -53,9 +53,13 @@ namespace RottenTomatoes.NET {
             return res;
         }
 
-        internal static MovieSearchResult Search(string query, int pageSize) {
+        internal static MovieSearchResult FindMovies(string query, int pageSize) {
             string json = new WebClient().DownloadString(string.Format(Constants.MovieSearchEndpoint, Constants.ApiKey, HttpUtility.UrlEncode(query), pageSize));
             return new MovieSearchResult(json, pageSize);
+        }
+
+        public Movie this[int pos] {
+            get { return Movies[pos]; }
         }
 
         public void GetNextPage() {
@@ -74,5 +78,21 @@ namespace RottenTomatoes.NET {
                 OnGetNextPageCompleted();
             });
         }
+
+        #region IEnumerable<Movie> Members
+
+        public IEnumerator<Movie> GetEnumerator() {
+            return Movies.GetEnumerator();
+        }
+
+        #endregion
+
+        #region IEnumerable Members
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
+            return Movies.GetEnumerator();
+        }
+
+        #endregion
     }
 }

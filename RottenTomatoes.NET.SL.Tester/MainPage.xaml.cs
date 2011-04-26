@@ -20,7 +20,7 @@ namespace RottenTomatoes.NET.SL.Tester {
         }
 
         void rt_FindMoviesCompleted(object sender, ResultEventArgs<MovieSearchResult> e) {
-            var m = e.Result.Movies.First();
+            var m = e.Result.First();
             m.LoadFullCastCompleted += new EventHandler<EventArgs>(m_LoadFullCastCompleted);
             m.LoadReviewsCompleted += new EventHandler<EventArgs>(m_LoadReviewsCompleted);
             m.LoadUnabridgedCompleted += new EventHandler<EventArgs>(m_LoadUnabridgedCompleted);

@@ -106,10 +106,6 @@ namespace RottenTomatoes.NET.SL {
         }
         #endregion
 
-        #region Static Methods
-
-        #endregion
-
         #region Constructors and Helpers
 
         internal Movie() { }

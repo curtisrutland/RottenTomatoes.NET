@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.Windows.Browser;
 
 namespace RottenTomatoes.NET.SL {
-    public class MovieSearchResult {
+    public class MovieSearchResult : IEnumerable<Movie> {
         public event EventHandler<EventArgs> GetNextPageCompleted;
         protected virtual void OnGetNextPageCompleted() {
             if (GetNextPageCompleted != null)
@@ -29,7 +21,7 @@ namespace RottenTomatoes.NET.SL {
 
         public int Total { get; set; }
         public int PageSize { get; set; }
-        public List<Movie> Movies { get; set; }
+        private List<Movie> Movies { get; set; }
         public SearchLinks SearchLinks { get; set; }
 
         public bool HasMorePages {
@@ -53,6 +45,10 @@ namespace RottenTomatoes.NET.SL {
             foreach (var m in json.movies)
                 Movies.Add(new Movie(m, true));
             SearchLinks = new SearchLinks(json.links, json.link_template);
+        }
+
+        public Movie this[int pos] {
+            get { return Movies[pos]; }
         }
 
         internal void FindMoviesAsync(string query, int pageSize) {
@@ -91,5 +87,21 @@ namespace RottenTomatoes.NET.SL {
                 OnGetNextPageCompleted();
             }
         }
+
+        #region IEnumerable<Movie> Members
+
+        public IEnumerator<Movie> GetEnumerator() {
+            return Movies.GetEnumerator();
+        }
+
+        #endregion
+
+        #region IEnumerable Members
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
+            return Movies.GetEnumerator();
+        }
+
+        #endregion
     }
 }

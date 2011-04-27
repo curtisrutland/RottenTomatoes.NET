@@ -126,9 +126,13 @@ namespace RottenTomatoes.NET.SL {
                 Genres = new List<string>();
                 foreach (var g in json.genres)
                     Genres.Add(g);
-                AbridgedDirectors = new List<string>();
-                foreach (var ad in json.abridged_directors)
-                    AbridgedDirectors.Add(ad.name);
+                if (json.abridged_directors == null)
+                    AbridgedDirectors = null;
+                else {
+                    AbridgedDirectors = new List<string>();
+                    foreach (var ad in json.abridged_directors)
+                        AbridgedDirectors.Add(ad.name);
+                }
             }
             MPAARating = json.mpaa_rating;
             Runtime = DynamicJsonObject.ParseIntFromDyn(json.runtime);

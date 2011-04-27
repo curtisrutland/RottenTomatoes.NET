@@ -1,0 +1,63 @@
+﻿<navigation:Page xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  x:Class="SilverTomatoes.Home" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+    Title="Movie Search" GotFocus="Page_GotFocus"
+    Style="{StaticResource PageStyle}">
+
+    <Grid x:Name="LayoutRoot">
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
+
+            <Grid VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" Grid.Row="0" 
+                                   Text="Find Movies"/>
+                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" Grid.Row="1"
+                                   Text="Begin typing to search for movies."/>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="9*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="queryTextBox" Margin="2" Grid.Column="0" TextChanged="queryTextBox_TextChanged" />
+                    <toolkit:NumericUpDown x:Name="pageCountUpDown" Value="20" Maximum="50" Minimum="1" DecimalPlaces="0" Increment="1" Grid.Column="1" />
+                </Grid>
+
+                <ListBox x:Name="resultListBox" Grid.Row="3">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="4" Grid.Column="0" Source="{Binding Path=Posters.Thumbnail}" Width="61" Height="91" Margin="2,1,10,1" />
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Title:" Style="{StaticResource HeaderTextBlockStyle}"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Title}" Style="{StaticResource ContentTextBlockStyle}"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="Year:" Style="{StaticResource HeaderTextBlockStyle}"/>
+                                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Year}" Style="{StaticResource ContentTextBlockStyle}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+
+        </ScrollViewer>
+    </Grid>
+
+</navigation:Page>

@@ -10,7 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
 namespace RottenTomatoes.NET.SL {
-    public class RottenTomatoes {
+    public class RottenTomatoe {
         public event EventHandler<ResultEventArgs<Movie>> GetMovieCompleted;
         protected virtual void OnGetMovieCompleted(Movie m) {
             if (GetMovieCompleted != null)

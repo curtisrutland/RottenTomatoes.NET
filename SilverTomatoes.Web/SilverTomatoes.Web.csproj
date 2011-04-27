@@ -6,14 +6,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{81E0878A-1CAD-495B-944A-6A15B5B2D4F2}</ProjectGuid>
+    <ProjectGuid>{4C1FD86D-889F-4A7B-8DB8-1B1F1360DCE7}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SilverTomatoes.Web</RootNamespace>
     <AssemblyName>SilverTomatoes.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SilverlightApplicationList>{E3609AFC-F876-4C41-950D-790C4538404D}|..\SilverTomatoes\SilverTomatoes.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{51A207D6-1CF2-417C-B5D9-1C3EFDAF2F2D}|..\SilverTomatoes\SilverTomatoes.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,7 +75,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>43960</DevelopmentServerPort>
+          <DevelopmentServerPort>38394</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

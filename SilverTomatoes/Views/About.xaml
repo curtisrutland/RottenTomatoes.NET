@@ -1,0 +1,36 @@
+﻿<navigation:Page x:Class="SilverTomatoes.About" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+    Title="About" 
+    Style="{StaticResource PageStyle}">
+
+    <Grid x:Name="LayoutRoot">
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
+
+            <StackPanel x:Name="ContentStackPanel">
+
+                <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
+                           Text="About Silver Tomatoes"/>
+                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" >
+                    Silver Tomatoes is an application created for a contest on DreamInCode.Net, to use <LineBreak />
+                    RottenTomatoes.com's newly released JSON API. I also used this to learn about <LineBreak/>
+                    Silverlight Navigation Applications.                    
+                </TextBlock>
+                <TextBlock><LineBreak/></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Please check out the rest of the site: </TextBlock>
+                    <HyperlinkButton Style="{StaticResource PageHyperlinkButtonStyle}" NavigateUri="http://curtisrutland.com" TargetName="Blank" Margin="5,0,0,0">CurtisRutland.com</HyperlinkButton>
+                </StackPanel>
+                <TextBlock><LineBreak/></TextBlock>
+                <TextBlock>
+                    Thanks, <LineBreak />
+                    --Curtis</TextBlock>
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+
+</navigation:Page>

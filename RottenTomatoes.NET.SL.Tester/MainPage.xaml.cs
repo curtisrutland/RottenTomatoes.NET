@@ -14,7 +14,7 @@ namespace RottenTomatoes.NET.SL.Tester {
     public partial class MainPage : UserControl {
         public MainPage() {
             InitializeComponent();
-            RottenTomatoes rt = new RottenTomatoes();
+            RottenTomatoe rt = new RottenTomatoe();
             rt.FindMoviesCompleted += new EventHandler<ResultEventArgs<MovieSearchResult>>(rt_FindMoviesCompleted);
             rt.FindMoviesAsync("cell", 10);
         }
